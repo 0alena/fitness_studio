@@ -19,7 +19,7 @@ public abstract class AbstractInMemoryRepository<T extends AbstractEntity>
     @Override
     public T save(T entity) {
         if (entity == null) {
-            throw new ValidationException("Нельзя сохранить пустую сущность");
+            throw new ValidationException("РќРµР»СЊР·СЏ СЃРѕС…СЂР°РЅРёС‚СЊ РїСѓСЃС‚СѓСЋ СЃСѓС‰РЅРѕСЃС‚СЊ");
         }
 
         entities.put(entity.getId(), entity);
