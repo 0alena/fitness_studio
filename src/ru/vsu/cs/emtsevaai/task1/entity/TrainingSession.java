@@ -9,6 +9,7 @@ public class TrainingSession extends AbstractEntity {
     private Trainer trainer;
     private WorkoutType workoutType;
     private LocalDateTime startsAt;
+    private LocalDateTime endsAt;
     private TrainingLevel requiredLevel;
     private int capacity;
     private SessionStatus status;
@@ -17,12 +18,14 @@ public class TrainingSession extends AbstractEntity {
             Trainer trainer,
             WorkoutType workoutType,
             LocalDateTime startsAt,
+            LocalDateTime endsAt,
             TrainingLevel requiredLevel,
             int capacity
     ) {
         this.trainer = trainer;
         this.workoutType = workoutType;
         this.startsAt = startsAt;
+        this.endsAt = endsAt;
         this.requiredLevel = requiredLevel;
         this.capacity = capacity;
         this.status = SessionStatus.PLANNED;
@@ -50,6 +53,14 @@ public class TrainingSession extends AbstractEntity {
 
     public void setStartsAt(LocalDateTime startsAt) {
         this.startsAt = startsAt;
+    }
+
+    public LocalDateTime getEndsAt() {
+        return endsAt;
+    }
+
+    public void setEndsAt(LocalDateTime endsAt) {
+        this.endsAt = endsAt;
     }
 
     public TrainingLevel getRequiredLevel() {
